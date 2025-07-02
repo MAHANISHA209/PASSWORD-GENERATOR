@@ -16,7 +16,7 @@ PASSWORD GENERATOR
 
  ▶️ HOW TO RUN 
 
-1. 📥 Step 1: Download the 
+1. 📥 Step 1: Download the Project
 
 2.  🖥️ Step 2: Open in Code Editor
 
