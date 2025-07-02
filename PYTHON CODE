@@ -1,0 +1,30 @@
+def pseudo_random(seed):
+    # Simple linear congruential generator (LCG)
+    a = 1664525
+    c = 1013904223
+    m = 2**32
+    return (a * seed + c) % m
+
+def generate_password(length):
+    seed = int(input("Enter a number for seed (e.g., your birth year): "))
+    password = ""
+    
+    # Character pool: a-z, A-Z, 0-9, and some symbols manually added
+    all_chars = (
+        "abcdefghijklmnopqrstuvwxyz"
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        "0123456789"
+        "!@#$%^&*()-_=+"
+    )
+
+    for i in range(length):
+        seed = pseudo_random(seed)
+        index = seed % len(all_chars)
+        password += all_chars[index]
+    
+    return password
+
+# Get password length from user
+print("Welcome to the Password Generator!")
+length = int(input("Enter password length: "))
+print("Generated password:", generate_password(length))
